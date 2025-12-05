@@ -1,6 +1,9 @@
 def listar_aprovados(lista):
     print(f"\n--- Alunos Aprovados ---")
     print(f"\n---- Média (7,0) ---")
+    if not alunos:
+        print("Nenhum aluno cadastrado.")
+        return
     for aluno in lista:
         if aluno["notas"] >= 7:
             print(f"{aluno['nome']} - Nota: {aluno['notas']}")
