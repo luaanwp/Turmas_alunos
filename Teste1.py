@@ -1,6 +1,5 @@
 a1 = {"nome": "João", "notas": 8.5}
 
-
 def listar_aprovados(lista):
     print("=====================================")
     print("\n--- Alunos Aprovados ---")
@@ -26,7 +25,23 @@ def listar(lista): pass
 def buscar(lista): pass
 def atualizar(lista): pass
 def remover(lista): pass
-def media_turma(lista): pass
+def media(lista):
+    print("--------- Média da turma ---------")
+
+    if not lista:
+        print("Nenhum aluno cadastrado.")
+        return
+    
+    soma = 0
+    for aluno in lista:
+        soma += aluno["notas"]
+
+    media_total = soma / len(lista)
+    print(f"Média da turma: {media_total:.2f}")
+
+    print("------------------------------------")
+    input("Pressione ENTER para continuar...")
+
 def ordenar_por_nome(lista): pass
 
 
@@ -58,7 +73,7 @@ def menu():
             listar_aprovados(lista)
             listar_reprovados(lista)
         elif opcao == "7":
-            media_turma(lista)
+            media(lista)
         elif opcao == "8":
             ordenar_por_nome(lista)
         elif opcao == "0":
