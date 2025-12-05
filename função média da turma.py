@@ -2,6 +2,9 @@ soma = 0
 def media(notas):
 
     print("--------- Média da turma ---------")
+    if not alunos:
+        print("Nenhum aluno cadastrado.")
+        return
     for nota in notas:
 
         soma += nota
